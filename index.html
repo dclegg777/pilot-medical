@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aviation Medical Fast-Track for Student Pilots</title>
-  <meta name="description" content="Avoid long delays and frustration in the FAA medical process. Practical, student-pilot-friendly guidance from firsthand experience." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Before You Submit — Avoid FAA Medical Delays for Student Pilots</title>
+  <meta name="description" content="First-person, been-there guidance for student pilots: avoid preventable FAA medical delays before you submit anything you can’t undo." />
   <style>
     :root{
       --bg:#0b1220;
-      --card:#111a2e;
+      --card:#101a2e;
       --text:#e9eefc;
-      --muted:#b9c3e5;
+      --muted:#b6c1e6;
+      --border:rgba(255,255,255,.12);
+      --shadow:0 12px 34px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1040px;
       --accent:#6ee7ff;
       --accent2:#a78bfa;
-      --warning:#ffd166;
       --ok:#8ef0b4;
-      --border:rgba(255,255,255,.12);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
-      --max:1080px;
+      --warn:#ffd166;
     }
     *{box-sizing:border-box}
     body{
@@ -26,84 +26,100 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(1100px 600px at 15% 20%, rgba(110,231,255,.18), transparent 60%),
-        radial-gradient(900px 500px at 85% 10%, rgba(167,139,250,.18), transparent 55%),
-        radial-gradient(900px 600px at 50% 100%, rgba(142,240,180,.10), transparent 60%),
+        radial-gradient(900px 500px at 12% 14%, rgba(110,231,255,.16), transparent 60%),
+        radial-gradient(900px 500px at 88% 10%, rgba(167,139,250,.16), transparent 60%),
+        radial-gradient(1100px 700px at 50% 110%, rgba(142,240,180,.10), transparent 60%),
         var(--bg);
-      line-height:1.5;
+      line-height:1.55;
     }
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:14px 0;
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0 10px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px; text-decoration:none;
-      font-weight:700; letter-spacing:.2px;
+      display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:800;
+      letter-spacing:.2px;
     }
     .dot{
       width:12px;height:12px;border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(110,231,255,.08);
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 4px rgba(110,231,255,.08);
     }
-    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
-    .navlinks a{
+    nav{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
       text-decoration:none; color:var(--muted);
       padding:8px 10px; border-radius:999px;
     }
-    .navlinks a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    .hero{
-      display:grid; grid-template-columns: 1.2fr .8fr;
-      gap:18px; align-items:stretch; margin-top:10px;
-    }
-    @media (max-width: 880px){ .hero{grid-template-columns:1fr} }
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
     .card{
-      background:rgba(17,26,46,.88);
+      background:rgba(16,26,46,.88);
       border:1px solid var(--border);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:22px;
       backdrop-filter: blur(10px);
     }
-    h1{font-size: clamp(28px, 4vw, 44px); margin:0 0 10px}
-    .sub{color:var(--muted); font-size: 16px; margin:0 0 18px}
-    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin: 12px 0 18px}
+    .hero{
+      display:grid; grid-template-columns: 1.25fr .75fr;
+      gap:16px; align-items:stretch; margin-top:10px;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+    h1{font-size:clamp(30px, 4vw, 48px); margin:0 0 10px; line-height:1.15}
+    h2{margin:0 0 10px; font-size:22px}
+    h3{margin:0 0 8px; font-size:16px}
+    .sub{margin:0 0 14px; color:var(--muted); font-size:16px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--muted); font-size:12px;
+      margin-bottom:10px;
+    }
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 16px}
     .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 12px; border-radius:999px;
       border:1px solid var(--border);
       background:rgba(255,255,255,.04);
-      color:var(--muted); font-size: 13px;
+      color:var(--muted); font-size:13px;
     }
     .pill b{color:var(--text)}
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
     .btn{
-      display:inline-block; text-decoration:none;
-      padding:12px 14px; border-radius:12px;
+      display:inline-block;
+      padding:12px 14px;
+      border-radius:12px;
       border:1px solid var(--border);
       background:rgba(255,255,255,.06);
       color:var(--text);
-      font-weight:600;
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(110,231,255,.22), rgba(167,139,250,.22));
-      border-color: rgba(110,231,255,.30);
+      text-decoration:none;
+      font-weight:700;
+      transition: transform .08s ease;
     }
     .btn:hover{transform: translateY(-1px)}
-    .small{font-size:13px; color:var(--muted)}
-    .grid3{
-      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
-      margin-top:16px;
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(110,231,255,.22), rgba(167,139,250,.22));
+      border-color: rgba(110,231,255,.28);
     }
-    @media (max-width: 880px){ .grid3{grid-template-columns:1fr} }
-    h2{margin: 0 0 10px; font-size: 22px}
-    h3{margin: 0 0 8px; font-size: 16px}
-    .kicker{color:var(--muted); margin: 0 0 14px}
-    .list{margin: 10px 0 0; padding-left: 18px; color:var(--muted)}
-    .list li{margin: 8px 0}
+    .btn.ghost{
+      background:transparent;
+    }
+    .small{font-size:13px; color:var(--muted); margin-top:10px}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:8px 0}
+    .callout{
+      border-left:4px solid rgba(110,231,255,.34);
+      padding:12px 14px;
+      background:rgba(110,231,255,.06);
+      border-radius:12px;
+      color:var(--muted);
+      margin-top:14px;
+    }
     .warn{
-      border-left:4px solid var(--warning);
+      border-left:4px solid var(--warn);
       padding:12px 14px;
       background:rgba(255,209,102,.08);
       border-radius:12px;
@@ -118,23 +134,40 @@
       color:var(--muted);
       margin-top:14px;
     }
-    .section{margin-top:18px}
-    .faq details{
+    .grid3{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+      margin-top:16px;
+    }
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+    .section{margin-top:16px}
+    .twoCol{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    @media (max-width: 900px){ .twoCol{grid-template-columns:1fr} }
+    .price{
+      display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+      margin:10px 0 0;
+    }
+    .price .amount{
+      font-size:34px; font-weight:900; letter-spacing:-.4px;
+    }
+    .price .note{color:var(--muted); font-size:13px}
+    details{
       border:1px solid var(--border);
       border-radius:14px;
       padding:12px 14px;
       background:rgba(255,255,255,.03);
       margin:10px 0;
     }
-    .faq summary{cursor:pointer; font-weight:650}
-    .footer{
-      margin:24px 0 10px;
+    summary{cursor:pointer; font-weight:800}
+    footer{
+      margin:26px 0 10px;
       color:var(--muted);
       font-size:12px;
       padding-top:14px;
       border-top:1px solid var(--border);
     }
-    .badge{
+    .muted{color:var(--muted)}
+    .nowrap{white-space:nowrap}
+    .tag{
       display:inline-block;
       padding:6px 10px;
       border:1px solid var(--border);
@@ -143,238 +176,282 @@
       color:var(--muted);
       font-size:12px;
     }
-    .twoCol{
-      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
-    }
-    @media (max-width: 880px){ .twoCol{grid-template-columns:1fr} }
-    .quote{
-      font-size: 14px;
-      color: var(--muted);
-      border-left: 3px solid rgba(110,231,255,.35);
-      padding-left: 12px;
-      margin: 12px 0 0;
-    }
-    .form{
-      display:grid; gap:10px; margin-top:12px;
-    }
-    input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:rgba(0,0,0,.18);
-      color:var(--text);
-      outline:none;
-    }
-    textarea{min-height:110px; resize:vertical}
-    .note{font-size:12px; color:var(--muted)}
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <header class="nav">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="dot"></span>
-        <span>MedicalReady for Student Pilots</span>
+    <header>
+      <a class="brand" href="#top" aria-label="Before You Submit home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Before You Submit</span>
       </a>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#problem">The Problem</a>
-        <a href="#how">How I Help</a>
-        <a href="#process">Your Next Steps</a>
+      <nav aria-label="Primary navigation">
+        <a href="#guide">The Guide</a>
+        <a href="#risk">Risk Assessment</a>
+        <a href="#support">1:1 Support</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main id="top" class="hero">
       <section class="card">
-        <span class="badge">Built for student pilots who are already training</span>
-        <h1>Don’t lose 6+ months to the FAA medical process.</h1>
+        <div class="badge">Built for student pilots who are already training (or about to start)</div>
+
+        <h1>Before you submit anything to the FAA medical system — read this.</h1>
+
         <p class="sub">
-          If you start the aviation medical process without guidance, one small misstep can trigger
-          a long “wait-and-see” cycle—while you’re paying for lessons and watching your momentum disappear.
+          I wish someone had told me this before I started flight training.
+          One wrong assumption can quietly cost you <span class="nowrap">six months</span> or more.
+        </p>
+
+        <p class="muted" style="margin:0 0 10px">
+          Most student pilots don’t lose time because they’re unqualified.
+          They lose time because they start the medical process without understanding how it actually works.
+        </p>
+
+        <p class="muted" style="margin:0">
+          This site exists to help you avoid preventable delays, stalled training, and months of frustration —
+          <b style="color:var(--text)">before you submit anything you can’t undo.</b>
         </p>
 
         <div class="pillrow">
-          <div class="pill">✅ <b>Firsthand experience</b> navigating delays</div>
-          <div class="pill">🧭 <b>Practical prep</b> before you submit</div>
-          <div class="pill">📄 <b>Documentation checklist</b> to reduce surprises</div>
+          <div class="pill">✅ <b>Firsthand</b> “learned the hard way”</div>
+          <div class="pill">🧭 <b>Process</b> and sequencing clarity</div>
+          <div class="pill">📄 <b>Documentation</b> awareness (no guessing)</div>
         </div>
 
         <div class="ctaRow">
-          <a class="btn primary" href="#contact">Get help before you submit</a>
-          <a class="btn" href="#process">See the fast-track steps</a>
+          <!-- Replace these links with your checkout URLs -->
+          <a class="btn primary" href="REPLACE_WITH_GUIDE_CHECKOUT_URL" id="buy-guide">Get the Guide — $99</a>
+          <a class="btn" href="#risk">Take the Risk Assessment — $29</a>
+          <a class="btn ghost" href="#support">View 1:1 Options</a>
         </div>
 
-        <p class="quote">
-          “I started the process without understanding the landmines. It cost me months.
-          After learning the right sequence, I corrected course quickly. Now I help student pilots avoid the same trap.”
+        <p class="small">
+          Educational guidance only. Not medical or legal advice. No affiliation with the FAA or any AME.
         </p>
 
         <div class="warn">
           <b style="color:var(--text)">Important:</b>
-          This is education and coaching—not medical advice. I don’t diagnose, prescribe, or replace your AME.
-          I help you prepare, sequence, and document properly so you’re not guessing.
+          Once certain information is submitted, you often can’t “undo” it.
+          This is why timing and sequencing matter.
         </div>
       </section>
 
-      <aside class="card" id="problem">
-        <h2>The fundamental issue</h2>
-        <p class="kicker">
-          The FAA medical process can be simple… until it isn’t.
-          The pain happens when you submit without knowing what your history will trigger.
+      <aside class="card">
+        <span class="tag">The fundamental problem</span>
+        <h2 style="margin-top:10px">The system isn’t forgiving of learning as you go.</h2>
+        <p class="muted" style="margin:0 0 10px">
+          I assumed the medical was a formality. Fill out the forms, see the AME, move on.
+          That assumption cost me months — not because I was disqualified, but because I didn’t understand the process.
         </p>
         <ul class="list">
-          <li><b>Timing mismatch:</b> you’re already training, but the process can pause everything.</li>
-          <li><b>Small overshare / wrong sequence:</b> turns into requests for more info and long queues.</li>
-          <li><b>Documentation gaps:</b> missing records leads to “send more paperwork” cycles.</li>
-          <li><b>Stress + uncertainty:</b> you don’t know what’s normal, what’s risky, or what’s urgent.</li>
+          <li><b>Submitting too early</b> without documentation ready</li>
+          <li><b>Oversharing</b> without context (and triggering follow-ups)</li>
+          <li><b>Wrong sequence</b> → long “wait and see” loops</li>
+          <li><b>Silence</b> that feels like progress (but isn’t)</li>
         </ul>
         <div class="ok">
-          <b style="color:var(--text)">The goal:</b> submit once, submit clean, and avoid preventable delays.
+          <b style="color:var(--text)">Goal:</b> Clarity before commitment — so you’re not guessing.
         </div>
       </aside>
     </main>
 
-    <section class="section grid3" id="how">
-      <div class="card">
-        <h3>1) Pre-check: risk &amp; readiness</h3>
-        <p class="kicker">
-          We identify the common “delay triggers” <em>before</em> you hit submit.
-        </p>
-        <ul class="list">
-          <li>What the FAA is likely to ask for (based on what you report)</li>
-          <li>Whether to pause and gather documents first</li>
-          <li>How to avoid incomplete/unclear submissions</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>2) Documentation pack</h3>
-        <p class="kicker">
-          Most delays are paperwork delays. We make your paperwork predictable.
-        </p>
-        <ul class="list">
-          <li>Checklist of records to request (and how to request them)</li>
-          <li>Clean “storyline” so your documentation matches your application</li>
-          <li>Simple folder structure so you’re not scrambling later</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>3) Submit with a plan</h3>
-        <p class="kicker">
-          You’ll know the next steps and what to do if the FAA asks for more.
-        </p>
-        <ul class="list">
-          <li>What to bring to your AME visit</li>
-          <li>How to respond if you receive an information request</li>
-          <li>How to keep your training plan moving</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section card" id="process">
-      <h2>The student pilot “fast-track” approach</h2>
-      <p class="kicker">
-        This is a simple, common-sense sequence that prevents the most avoidable delays.
+    <!-- GUIDE -->
+    <section id="guide" class="section card">
+      <h2>Before You Submit (PDF)</h2>
+      <p class="muted" style="margin:0 0 12px">
+        This is the guide I wish existed before I filled out my first form.
+        It explains how the FAA medical process <em>actually</em> works, where delays really come from,
+        and how to know whether you should proceed or pause — without giving you scripts or “one-size-fits-all” tactics.
       </p>
 
       <div class="twoCol">
-        <div>
-          <h3>Do this first</h3>
+        <div class="card" style="padding:18px">
+          <h3>What you’ll learn</h3>
           <ul class="list">
-            <li><b>Inventory your history</b> (meds, diagnoses, specialists, sleep studies, mental health, etc.)</li>
-            <li><b>Gather records</b> that back up anything likely to be questioned</li>
-            <li><b>Write a clean timeline</b> (dates, providers, outcomes, current status)</li>
-            <li><b>Confirm you’re ready</b> to complete MedXPress without surprises</li>
+            <li>How MedXPress, AMEs, and the FAA actually interact</li>
+            <li>Why people lose months without realizing it</li>
+            <li>A simple readiness framework I use now</li>
+            <li>Documentation categories that often matter — and why</li>
+            <li>What an AME visit is (and isn’t)</li>
+            <li>When it’s time to pause and get help</li>
           </ul>
         </div>
-        <div>
-          <h3>Then submit &amp; execute</h3>
-          <ul class="list">
-            <li><b>Complete MedXPress</b> with clarity and consistency</li>
-            <li><b>Schedule AME visit</b> when you have what you need in hand</li>
-            <li><b>Keep a response kit</b> ready if follow-up is requested</li>
-            <li><b>Protect your training</b> with a plan B if timing slips</li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="warn" style="margin-top:14px">
-        <b style="color:var(--text)">Reality check:</b>
-        Some cases legitimately require FAA review. The point is not “guaranteed approval” —
-        it’s avoiding the preventable 6-month detours caused by missing documents, poor sequencing, or unclear submissions.
+        <div class="card" style="padding:18px">
+          <h3>What this is not</h3>
+          <ul class="list">
+            <li>Medical advice</li>
+            <li>Legal advice</li>
+            <li>A guarantee of outcome</li>
+            <li>Templates, scripts, or exact wording</li>
+          </ul>
+          <div class="callout">
+            I’m not trying to sell you secrets. I’m trying to save you time.
+            This is about process, sequencing, and judgment — the things that decide whether this takes weeks or many months.
+          </div>
+
+          <div class="price">
+            <div class="amount">$99</div>
+            <div class="note">Instant download (PDF)</div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="REPLACE_WITH_GUIDE_CHECKOUT_URL">Get the Guide — $99</a>
+            <a class="btn" href="#risk">Not sure yet? Take the Risk Assessment</a>
+          </div>
+
+          <p class="small">One unnecessary delay can cost more than this entire guide.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section card faq" id="faq">
+    <!-- RISK ASSESSMENT -->
+    <section id="risk" class="section card">
+      <h2>Medical Delay Risk Assessment</h2>
+      <p class="muted" style="margin:0 0 12px">
+        Before you submit anything, there’s one question that matters:
+        <b style="color:var(--text)">How likely are you to trigger a long delay without realizing it?</b>
+      </p>
+      <p class="muted" style="margin:0 0 12px">
+        This short paid assessment helps you identify whether you’re low, moderate, or high risk for
+        preventable delay — so you’re not guessing.
+      </p>
+
+      <div class="twoCol">
+        <div class="card" style="padding:18px">
+          <h3>What you get</h3>
+          <ul class="list">
+            <li>5–10 minute questionnaire</li>
+            <li>Risk category result: Low / Moderate / High</li>
+            <li>Clear guidance on whether to proceed or pause</li>
+          </ul>
+          <div class="warn">
+            <b style="color:var(--text)">Note:</b> This doesn’t provide case-specific instructions or medical advice.
+            It provides situational awareness.
+          </div>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <h3>Who it’s for</h3>
+          <ul class="list">
+            <li>Student pilots preparing for MedXPress</li>
+            <li>Pilots already training who want certainty</li>
+            <li>Anyone unsure if they’re “overthinking” or actually at risk</li>
+          </ul>
+
+          <div class="price">
+            <div class="amount">$29</div>
+            <div class="note">Quick, paid self-assessment</div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="REPLACE_WITH_RISK_CHECKOUT_URL">Take the Risk Assessment — $29</a>
+            <a class="btn" href="#support">Need clarity? See 1:1 support</a>
+          </div>
+
+          <p class="small">Lowest-cost way to find out before you commit.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1:1 SUPPORT -->
+    <section id="support" class="section card">
+      <h2>1:1 Support (Limited Availability)</h2>
+      <p class="muted" style="margin:0 0 12px">
+        Some situations can’t be solved with general guidance. If you’ve read the guide and still feel unsure,
+        this is where we talk about <em>your</em> situation — process, sequencing, next steps.
+      </p>
+
+      <div class="grid3">
+        <div class="card" style="padding:18px">
+          <h3>Medical Readiness Call</h3>
+          <p class="muted" style="margin:0 0 10px"><b style="color:var(--text)">45 minutes • $149</b></p>
+          <ul class="list">
+            <li>Confirm whether to proceed or pause</li>
+            <li>Clarify where you are in the process</li>
+            <li>Identify likely documentation gaps</li>
+          </ul>
+          <p class="small">No medical advice. No outcome promises. Just clarity.</p>
+          <div class="ctaRow">
+            <a class="btn primary" href="REPLACE_WITH_READINESS_BOOKING_URL">Book a Readiness Call</a>
+          </div>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <h3>Medical Recovery Call</h3>
+          <p class="muted" style="margin:0 0 10px"><b style="color:var(--text)">60 minutes • $299</b></p>
+          <ul class="list">
+            <li>For “already submitted and stuck”</li>
+            <li>Understand what stage you’re truly in</li>
+            <li>Identify what’s missing or unclear</li>
+          </ul>
+          <p class="small">These cases require more prep and are intentionally limited.</p>
+          <div class="ctaRow">
+            <a class="btn primary" href="REPLACE_WITH_RECOVERY_INTAKE_URL">Request a Recovery Call</a>
+          </div>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <h3>Availability</h3>
+          <p class="muted" style="margin:0 0 10px">
+            I keep availability limited so these conversations stay focused and useful.
+          </p>
+          <div class="ok">
+            <b style="color:var(--text)">If booking is closed:</b> it will reopen as capacity allows.
+          </div>
+          <p class="small">If you’re early in the process, start with the guide.</p>
+          <div class="ctaRow">
+            <a class="btn" href="#guide">Start with the Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section card">
       <h2>FAQ</h2>
 
       <details>
-        <summary>Who is this for?</summary>
-        <p class="kicker">
-          Student pilots who are about to start the medical process, or who started and feel stuck or unsure.
-          Especially helpful if you’re already taking lessons and don’t want momentum-killing delays.
+        <summary>Are you an AME or affiliated with the FAA?</summary>
+        <p class="muted" style="margin:10px 0 0">
+          No. This is educational guidance based on firsthand experience and process literacy. I don’t diagnose,
+          provide medical advice, or guarantee outcomes. You still work with your AME and follow FAA requirements.
         </p>
       </details>
 
       <details>
-        <summary>Are you an AME or the FAA?</summary>
-        <p class="kicker">
-          No. This is guidance, preparation, and process coaching based on firsthand experience and practical organization.
-          You’ll still work with your AME and follow FAA requirements.
+        <summary>Will this tell me exactly what to say or what to submit?</summary>
+        <p class="muted" style="margin:10px 0 0">
+          No — intentionally. Exact wording and “templates” can create false confidence and lead to mistakes.
+          This guide teaches how the process works, where delays come from, and how to make smarter decisions
+          before you submit anything permanent.
         </p>
       </details>
 
       <details>
-        <summary>What do we actually do together?</summary>
-        <p class="kicker">
-          We map your situation, build a document checklist, organize your timeline, and prepare you to complete MedXPress
-          and your AME visit with fewer surprises. If you’re already stuck, we focus on “what’s missing” and what to do next.
+        <summary>What if I already submitted and I’m stuck?</summary>
+        <p class="muted" style="margin:10px 0 0">
+          That’s what the Recovery Call is for. We focus on understanding what stage you’re in, what’s missing or unclear,
+          and what realistic next steps look like.
         </p>
       </details>
 
       <details>
-        <summary>What results should I expect?</summary>
-        <p class="kicker">
-          Clearer decisions, cleaner submissions, better documentation, and less wasted time.
-          I can’t promise a particular FAA outcome, but I can help you avoid common self-inflicted delays.
+        <summary>What should I do first?</summary>
+        <p class="muted" style="margin:10px 0 0">
+          If you’re unsure, start with the Risk Assessment. If you want the full framework, start with the guide.
+          If you still can’t tell whether to proceed or pause after reading, then 1:1 support can make sense.
         </p>
       </details>
     </section>
 
-    <section class="section card" id="contact">
-      <h2>Talk to me before you hit submit</h2>
-      <p class="kicker">
-        If you’re a student pilot, timing matters. Send a note describing where you are in the process and what concerns you.
-      </p>
-
-      <!--
-        Simple no-backend contact options:
-        1) Replace YOUR_EMAIL below with your email to use the mailto button.
-        2) Or embed a form provider (Google Forms, Tally, Jotform) later.
-      -->
-      <div class="ctaRow">
-        <a class="btn primary" href="mailto:dclegg777@gmail.com?subject=Student%20Pilot%20Medical%20Help&body=Hi%20-%20I%27m%20a%20student%20pilot.%20Here%27s%20where%20I%20am%20in%20the%20medical%20process%3A%0A%0A1)%20Where%20I%20am%20now%3A%0A2)%20Concerns%20or%20history%20I%27m%20worried%20about%3A%0A3)%20Timeline%20(when%20I%20started%20training%2C%20when%20I%20want%20to%20solo)%3A%0A%0AThanks!">Email me</a>
-        <a class="btn" href="#process">Review the steps again</a>
-      </div>
-
-      <div class="form" aria-label="Optional contact form (no backend)">
-        <input type="text" placeholder="Your name (optional)" aria-label="Your name" />
-        <input type="email" placeholder="Your email (optional)" aria-label="Your email" />
-        <textarea placeholder="Where are you in the process and what are you concerned about?" aria-label="Message"></textarea>
-        <p class="note">
-          This form doesn’t submit anywhere yet (no backend). Use the “Email me” button above, or connect a form provider later.
-        </p>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="badge">Education &amp; process coaching — not medical or legal advice</div>
+    <footer>
+      <div class="tag">Educational guidance only • Not medical or legal advice</div>
       <p style="margin:10px 0 0">
-        © <span id="yr"></span> MedicalReady for Student Pilots. All rights reserved.
+        © <span id="yr"></span> Before You Submit. All rights reserved.
       </p>
     </footer>
   </div>
